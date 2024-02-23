@@ -10,17 +10,17 @@ const Content = ({tasks, handleCheck, handleDelete}) => {
             <input 
               type="checkbox"
               onChange={() => handleCheck(task.id)}
-              checked = {task.checked}
+              checked = {task.completed}
             />
             <label
-              style={(task.checked) ? { textDecoration: 'line-through' } : null}
-              onDoubleClick={() => handleCheck(task.id)}      /* Allow the item to be checked by double-clicking on it */
-            >{task.task}</label>
+              style={(task.completed) ? { textDecoration: 'line-through' } : null}
+              onDoubleClick={() => handleCheck(task)}      /* Allow the item to be checked by double-clicking on it */
+            >{task.taskName}</label>
             <FaTrashAlt
               onClick={() => handleDelete(task.id)}
               role='button'
               tabIndex="0"
-              aria-label={`Delete ${task.task}`}
+              aria-label={`Delete ${task.taskName}`}
             />
           </li>
         ))}
