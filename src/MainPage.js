@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth } from './context/AuthContext';
 import { addNewTask, deleteTask, getTasks, updateTask } from './services/TaskServices';
-
+import AddTask from './AddTask';
+import Content from './Content';
+import Header from './Header';
+import Footer from './Footer';
 const MainPage = () => {
     const [tasks, setTasks]= useState([]);
-    const [newTask, setNewTask] = useState('')
+    const [newTask, setNewTask] = useState('');
     const { authToken } = useAuth();
   
     useEffect(() => {
@@ -43,7 +46,7 @@ const MainPage = () => {
   
   
     return (
-      <div className="App">
+      <div>
         <Header/>
         <AddTask
           newTask={newTask}
