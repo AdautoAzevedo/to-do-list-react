@@ -1,5 +1,6 @@
 import LoginPage from './LoginPage';
 import MainPage from './MainPage';
+import './App.css';
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 /* Write a better Readme, improve css */

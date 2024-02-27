@@ -9,7 +9,6 @@ const MainPage = () => {
     const [tasks, setTasks]= useState([]);
     const [newTask, setNewTask] = useState('');
     const { authToken } = useAuth();
-  
     useEffect(() => {
       getTaskList();
     }, [])
