@@ -1,7 +1,7 @@
 export const userLogin = async (user) => {
     const authURL = "http://localhost:8080/auth/login";
+    console.log(user);
       try {
-          console.log(user);
           const response = await fetch(authURL,{
               method: "POST",
               headers: {"Content-type":"application/json"},
@@ -10,15 +10,15 @@ export const userLogin = async (user) => {
 
           if (!response.ok){
             const message = response.status;
+            console.error(message);
             throw new Error(message);
           }
 
           const data = await response.json();
-          const token = data.accessToken;
-          console.log(token);
+          const token = data.token;
           return token
         } catch (error) {
-          console.log(error);
+          console.log(error.message);
           throw error;
       }
 }

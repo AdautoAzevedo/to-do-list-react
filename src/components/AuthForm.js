@@ -7,6 +7,7 @@ const AuthForm = ({user, setUser, handleSubmit}) => {
             ...user,
             [name]: value
         });
+        console.log(user);
     }
     
     return (
