@@ -9,7 +9,7 @@ const Content = ({tasks, handleCheck, handleDelete}) => {
           <li className="task" key={task.id}>
             <input 
               type="checkbox"
-              onChange={() => handleCheck(task.id)}
+              onChange={() => handleCheck(task)}
               checked = {task.completed}
             />
             <label

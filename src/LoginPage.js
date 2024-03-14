@@ -11,8 +11,8 @@ const LoginPage = ({ user, setUser }) => {
     const sendLoginRequest = async() => {
         try {
             const token = await userLogin(user);
-            setToken(token);
             console.log("Token: "+token);
+            setToken(token);
             //navigate("/home");
         } catch (error) {
             console.error(error);

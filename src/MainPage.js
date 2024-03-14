@@ -26,13 +26,11 @@ const MainPage = () => {
   
     const handleCheck = async (task) => {
       const response = await updateTask(task, authToken);
-      console.log(response);
       getTaskList();
     }
   
     const handleDelete = async (id) => {
       const response = await deleteTask(id, authToken);
-      console.log(response);
       getTaskList();
     }
   

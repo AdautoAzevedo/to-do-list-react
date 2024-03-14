@@ -4,6 +4,7 @@ export const addNewTask = async(task, authToken) => {
         taskName: task,
         completed: false
     };
+
     try {
         const response = await fetch(taskURL, {
             method: "POST", 
@@ -54,7 +55,6 @@ export const getTasks = async(authToken) => {
 
 export const deleteTask = async (taskID, authToken) => {
     const taskURL =  "http://localhost:8080/tasks";
-
     try {
         const response = await fetch(taskURL + `/${taskID}`, {
             method: "DELETE",
@@ -81,12 +81,10 @@ export const updateTask = async(task, authToken) => {
     const taskURL =  "http://localhost:8080/tasks";
 
     const taskForUpdate = {
-        taskName: task,
+        ...task,
         completed: task.completed ? false : true
     };
-
-    console.log(taskForUpdate);
-
+    
     try {
         const response = await fetch(taskURL + `/${task.id}`, {
             method: "PUT",
