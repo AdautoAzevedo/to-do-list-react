@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const LoginPage = ({ user, setUser }) => {
     const navigate = useNavigate();
     const {setToken} = useAuth();
+    const [errorMessage, setErrorMessage] = useState('');
 
     const sendLoginRequest = async() => {
         try {
@@ -16,6 +17,7 @@ const LoginPage = ({ user, setUser }) => {
             //navigate("/home");
         } catch (error) {
             console.error(error);
+            setErrorMessage('Invalid username or password');
         }
     }
     const handleSubmit = (event) => {
@@ -25,9 +27,10 @@ const LoginPage = ({ user, setUser }) => {
     }
 
     return (
-        <main>
+        <main className='login-page'>
             <h2>Login page</h2>
             <AuthForm user={user} setUser={setUser} handleSubmit={handleSubmit}/>
+            {errorMessage && <p>{errorMessage}</p>}
             <Link to={"/home"}>Home</Link>
         </main>
     )

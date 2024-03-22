@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/login' element = {<LoginPage user={user} setUser={setUser}/>}/>
+        <Route path='/' element = {<LoginPage user={user} setUser={setUser}/>}/>
         <Route path='/home' element = { <MainPage /> } />
       </Routes>
     </div>

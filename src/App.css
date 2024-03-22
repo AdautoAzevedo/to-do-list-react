@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+:root {
+  --PRIMARY-COLOR: mediumblue;
+  --SECUNDARY-COLOR: aliceblue;
+}
+
   body {
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -25,15 +29,18 @@
     height: 100vh; 
     width: 100%; 
     max-width: 500px;
-    border: 1px solid mediumblue;
+    border: 1px solid var(--PRIMARY-COLOR);
     margin: auto;
   }
   
-  header {
+  header, footer {
     width: 100%;
     padding: 0 0.25em;
-    background-color: mediumblue;
-    color: aliceblue;
+    background-color: var(--PRIMARY-COLOR);
+    color: var(--SECUNDARY-COLOR);
+  }
+
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,10 +58,6 @@
   }
   
   footer {
-    width: 100%;
-    padding: 0.25em;
-    background-color: mediumblue;
-    color: aliceblue;
     display: grid;
     place-content: center;
   }
@@ -104,11 +107,8 @@
     flex-grow: 1;
   }
   
-  
-  
   .task svg {
     width: 48px;
-    min-width: 48px;
     height: 36px;
     font-size: 1rem;
     color: steelblue;
@@ -121,7 +121,7 @@
     outline: none;
   }
   
-  .addForm {
+  .addForm, .searchForm {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -135,7 +135,8 @@
     left: -99999px;
   }
   
-  .addForm input[type='text'] {
+  .addForm input[type='text'],
+  .searchForm input[type='text'] {
     flex-grow: 1;
     max-width: calc(100% - 50px);
     min-height: 48px;
@@ -152,8 +153,8 @@
     border-radius: 0.25rem;
     padding: 0.5rem;
     font-size: 1rem;
-    background-color: aliceblue;
-    color: mediumblue;
+    background-color: var(--SECUNDARY-COLOR);
+    color: var(--PRIMARY-COLOR);
     cursor: pointer;
   }
   
@@ -164,26 +165,65 @@
     outline: none;
   }
   
-  .searchForm {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0.25rem 0 0;
-    padding: 0 0.5rem 0.25rem;
-    border-bottom: 1px solid #eee;
-  }
-  
   .searchForm label {
     position: absolute;
     left: -99999px;
   }
-  
-  .searchForm input[type='text'] {
-    flex-grow: 1;
-    max-width: 100%;
-    min-height: 48px;
-    font-size: 1rem;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    outline: none;
-  }
+
+  .login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-page h2 {
+  margin-bottom: 20px;
+}
+
+.login-page a {
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.login-page a:hover {
+  text-decoration: underline;
+}
+
+.auth-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.auth-form input[type='text'],
+.auth-form input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #0056b3;
+}

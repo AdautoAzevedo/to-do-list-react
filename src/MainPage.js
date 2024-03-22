@@ -5,6 +5,7 @@ import AddTask from './AddTask';
 import Content from './Content';
 import Header from './Header';
 import Footer from './Footer';
+
 const MainPage = () => {
     const [tasks, setTasks]= useState([]);
     const [newTask, setNewTask] = useState('');

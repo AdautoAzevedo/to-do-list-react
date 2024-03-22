@@ -11,7 +11,7 @@ const AuthForm = ({user, setUser, handleSubmit}) => {
     }
     
     return (
-        <form>
+        <form className='auth-form'>
             <label htmlFor='login'> User: </label>
             <input 
                 type='text'
