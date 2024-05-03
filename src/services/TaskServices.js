@@ -1,5 +1,6 @@
+const taskURL =  "http://localhost:8080/tasks";
+
 export const addNewTask = async(task, authToken) => {
-    const taskURL =  "http://localhost:8080/tasks";
     const newTask = {
         taskName: task,
         completed: false
@@ -30,7 +31,6 @@ export const addNewTask = async(task, authToken) => {
 }
 
 export const getTasks = async(authToken) => {
-    const taskURL =  "http://localhost:8080/tasks";
     try {
         const response = await fetch(taskURL, {
             method: "GET",
@@ -54,7 +54,6 @@ export const getTasks = async(authToken) => {
 }
 
 export const deleteTask = async (taskID, authToken) => {
-    const taskURL =  "http://localhost:8080/tasks";
     try {
         const response = await fetch(taskURL + `/${taskID}`, {
             method: "DELETE",
@@ -78,8 +77,6 @@ export const deleteTask = async (taskID, authToken) => {
 }
 
 export const updateTask = async(task, authToken) => {
-    const taskURL =  "http://localhost:8080/tasks";
-
     const taskForUpdate = {
         ...task,
         completed: task.completed ? false : true
@@ -108,4 +105,3 @@ export const updateTask = async(task, authToken) => {
         throw error;
     }
 } 
-
